@@ -35,9 +35,42 @@ UX
 - неэффективный поиск пересечений. Можно было бы сделать хештаблицу по координатам ячеек и так проверять
 - непонятно как в эту схему с ячейками вписать порты
 
-h5 Борд и ячейки
+h5. Борд и ячейки
 
+Board не содержит cells
 
+ScreenPoint {x,y}
+BoardPoint {r, c}
+
+Node {
+  Origin BoardPoint
+  im Image
+}
+
+Node.Draw(scale)
+
+Board{
+  Nodes
+  Pipes
+  Ports ???
+
+  AddNode(node)
+  AddPipe(pipe)
+  AddPort(port)
+}
+
+PipeBuilder {
+  direction
+  current_pipe
+}
+
+Game {
+  VisualField {
+    background []Cell
+    Board
+    PipeBuilder
+  }
+}
 
 #### Core
 Ориентированный граф связей между узлами
